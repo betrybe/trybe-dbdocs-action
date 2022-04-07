@@ -1,1 +1,16 @@
 
+name: 'Trybe DBdocs'
+author: 'Trybe'
+description: 'Esta GitHub Action é utilizada para a geração de diagrama de relacionamento de banco de dados.'
+inputs:
+  token:
+    description: 'DBdocs token.'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - id: job
+      shell: bash
+      run: ${{ github.action_path }}/dbdocs.sh
+      env: 
+        DBDOCS_TOKEN: ${{ inputs.DBDOCS_TOKEN }} 
