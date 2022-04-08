@@ -6,6 +6,9 @@ inputs:
   token:
     description: 'DBdocs token.'
     required: true
+  path: 
+    description: 'DBdocs dbml path'
+    default: "."
 runs:
   using: 'composite'
   steps:
@@ -13,4 +16,5 @@ runs:
       shell: bash
       run: ${{ github.action_path }}/dbdocs.sh
       env: 
-        DBDOCS_TOKEN: ${{ inputs.DBDOCS_TOKEN }} 
+        DBDOCS_TOKEN: ${{ inputs.token }} # obrigatório
+        DBDOCS_PATH: ${{ inputs.path }} 
