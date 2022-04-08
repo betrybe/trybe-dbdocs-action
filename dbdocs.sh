@@ -9,6 +9,6 @@ echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
 
 sudo npm install -g dbdocs 
 dbdocs
-dbdocs build $REPOSITORY_PATH/$DBDOCS_PATH/$REPOSITORY.dbml --project=$REPOSITORY --password=DBDOCS_PASSWORD
+dbdocs build $REPOSITORY_PATH/$DBDOCS_PATH/$REPOSITORY-dastabase.dbml --project=$REPOSITORY --password=DBDOCS_PASSWORD
 
 echo "Success!"
