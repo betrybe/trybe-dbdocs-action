@@ -2,7 +2,8 @@
 set -e
 
 echo "Starting Dbdocs proccess"
-echo $REPOSITORY
+echo $REPOSITORY_PATH
+echo $DBDOCS_PATH
 
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
