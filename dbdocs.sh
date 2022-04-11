@@ -9,7 +9,6 @@ echo "Repository "$REPOSITORY
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
-echo DBDOCS_PASSWORD
 
 sudo npm install -g dbdocs 
 dbdocs
