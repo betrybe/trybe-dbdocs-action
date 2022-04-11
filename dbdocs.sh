@@ -11,6 +11,6 @@ sudo npm install -g dbdocs
 #dbdocs
 ls -a
 #dbdocs build ./docs/lms-database.dbml --project=lego-lms
-dbdocs build $REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD
+dbdocs build $REPOSITORY_PATH/$DBDOCS_PATH/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD
 
 echo "Success!"
