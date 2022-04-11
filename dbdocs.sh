@@ -2,12 +2,13 @@
 set -e
 
 echo "Starting Dbdocs proccess"
-echo $REPOSITORY_PATH
-echo $DBDOCS_PATH
+echo "Repository path "$REPOSITORY_PATH
+echo "Dbdocs Path "$DBDOCS_PATH
+echo "Dbdocs Path "$DBDOCS_PATH
 
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
-echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
+echo DBDOCS_PASSWORD=$DBDOCS_PASSWORD >> $GITHUB_ENV
 
 sudo npm install -g dbdocs 
 dbdocs
