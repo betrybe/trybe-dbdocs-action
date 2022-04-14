@@ -14,13 +14,11 @@ sudo npm install -g dbdocs
 #dbdocs
 echo "Build Diagram"
 
-dbdocs build $DBDOCS_PATH/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD >> url.txt
+dbdocs build $DBDOCS_PATH/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD
 
-#grep "https://dbdocs.io/" url.txt
+#https://dbdocs.io/username/your_project
+url=https://dbdocs.io/tech-ops/$REPOSITORY
+echo "DBDOCS_URL=$url" >> $GITHUB_ENV
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
 echo "url=$url" >> $GITHUB_ENV
 echo "Dbdocs ran successfully!"
-
-#awk
-
-
