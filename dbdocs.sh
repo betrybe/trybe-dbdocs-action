@@ -16,7 +16,7 @@ echo "Build Diagram"
 
 dbdocs build $DBDOCS_PATH/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD >> url.txt
 
-grep "https://dbdocs.io/" url.txt
+#grep "https://dbdocs.io/" url.txt
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
 echo "url=$url" >> $GITHUB_ENV
 echo "Dbdocs ran successfully!"
