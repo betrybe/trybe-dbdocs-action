@@ -7,8 +7,8 @@ DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
 sudo npm install -g dbdocs 
 dbdocs
-url=$("echo -n dbdocs build $DBDOCS_PATH/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD")
+dbdocs build $DBDOCS_PATH/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD
 
-echo "url=$url" >> $GITHUB_ENV
+#echo "url=$url" >> $GITHUB_ENV
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
 echo "Dbdocs ran successfully!"
