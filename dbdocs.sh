@@ -20,7 +20,7 @@ sudo npm install -g dbdocs
 #dbdocs
 echo "Build Diagram"
 
-dbdocs build docs/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD
+#dbdocs build docs/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD
 
 #https://dbdocs.io/username/your_project
 url=https://dbdocs.io/tech-ops/$REPOSITORY
