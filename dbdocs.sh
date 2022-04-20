@@ -4,7 +4,7 @@ set -e
 echo "Dbdocs started"
 
 if [[ "$DBDOCS_PATH" == "." ]]; then
-  $DBDOCS_PATH = "docs"
+  $DBDOCS_PATH = "/docs"
 fi
 
 #Generate password in order to protect the project's diagram url
@@ -12,7 +12,7 @@ DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
 echo "REPOSITORY $REPOSITORY"
 echo "REPOSITORY_PATH $REPOSITORY_PATH"
-echo "DBDOCS_PATH $sub_dir_docs"
+echo "DBDOCS_PATH $DBDOCS_PATH"
 echo "Install Dbdocs"
 sudo npm install -g dbdocs 
 #echo "Check Dbdocs"
