@@ -3,9 +3,9 @@ set -e
 
 echo "Dbdocs started"
 
-#if [[ "$DBDOCS_PATH" == "." ]]; then
-#  $DBDOCS_PATH = "/docs"
-#fi
+if [[ "$DBDOCS_PATH" == "." ]]; then
+  $DBDOCS_PATH = "/docs"
+fi
 
 #Generate password in order to protect the project's diagram url
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
