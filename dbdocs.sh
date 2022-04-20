@@ -3,9 +3,8 @@ set -e
 
 echo "Dbdocs started"
 
-sub_dir_docs="."
 if [[ "$DBDOCS_PATH" == "." ]]; then
-  sub_dir_docs = "./docs"
+  $DBDOCS_PATH = "docs"
 fi
 
 #Generate password in order to protect the project's diagram url
@@ -20,7 +19,7 @@ sudo npm install -g dbdocs
 #dbdocs
 echo "Build Diagram"
 
-dbdocs build $sub_dir_docs/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD
+dbdocs build $DBDOCS_PATH/$REPOSITORY-database.dbml --project=$REPOSITORY --password=$DBDOCS_PASSWORD
 
 #https://dbdocs.io/username/your_project
 url=https://dbdocs.io/tech-ops/$REPOSITORY
