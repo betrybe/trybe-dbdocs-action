@@ -3,7 +3,7 @@ set -e
 
 echo "Dbdocs started"
 
-PATH=$(find "$(PWD -L)" -name "$DBDOCS_FILENAME")
+PATH=$(find $(pwd -L) -name "$DBDOCS_FILENAME")
 #Generate password in order to protect the project's diagram url
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
