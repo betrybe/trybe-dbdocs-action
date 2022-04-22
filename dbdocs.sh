@@ -6,7 +6,7 @@ echo "Dbdocs started"
 #Generate password in order to protect the project's diagram url
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
-PATH=$(find $(pwd -L) -name "$DBDOCS_FILENAME")
+PATH=$(echo $(find $(PWD -L) -name "lego-lms-database.dbml"))
 
 echo "DBDOCS_FILENAME $DBDOCS_FILENAME"
 echo "FILE PATH $PATH"
