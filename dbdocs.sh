@@ -11,7 +11,10 @@ PATH=$(echo $(find $(pwd -L) -name $DBDOCS_FILENAME))
 
 echo "DBDOCS_FILENAME $DBDOCS_FILENAME"
 echo "FILE PATH $PATH"
+remove="/home/runner/work/"
 
+url=$(echo "${PATH/remove/""}")
+echo $url
 echo "Install Dbdocs"
 echo "sudo npm install -g dbdocs"
 
