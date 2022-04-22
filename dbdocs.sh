@@ -21,7 +21,7 @@ echo "sudo npm install -g dbdocs"
 #Building dbdocs
 
 echo "Build Diagram"
-dbdocs build lego-lms/docs/lego-lms-database.dbml --password=$DBDOCS_PASSWORD
+echo "dbdocs build lego-lms/docs/lego-lms-database.dbml --password=$DBDOCS_PASSWORD"
 
 #https://dbdocs.io/username/your_project
 echo "https://dbdocs.io/tech-ops/$REPOSITORY"
