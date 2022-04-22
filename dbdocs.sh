@@ -6,13 +6,14 @@ echo "Dbdocs started"
 #Generate password in order to protect the project's diagram url
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
-PATH=$(echo $(find $(pwd -L) -name "lego-lms-database.dbml"))
+#Filepath 
+PATH=$(echo $(find $(pwd -L) -name $DBDOCS_FILENAME))
 
 echo "DBDOCS_FILENAME $DBDOCS_FILENAME"
 echo "FILE PATH $PATH"
 
 echo "Install Dbdocs"
-sudo npm install -g dbdocs 
+#sudo npm install -g dbdocs 
 #echo "Check Dbdocs"
 #dbdocs
 echo "Build Diagram"
