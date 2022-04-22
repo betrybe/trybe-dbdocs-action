@@ -19,10 +19,11 @@ echo "sudo npm install -g dbdocs"
 #dbdocs
 
 #Building dbdocs
+echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
 echo "Build Diagram"
 echo "dbdocs build lego-lms/lego-lms/docs/lego-lms-database.dbml --password=$DBDOCS_PASSWORD"
 
-echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
+
 #https://dbdocs.io/username/your_project
 echo "https://dbdocs.io/tech-ops/$REPOSITORY"
 echo "Dbdocs ran successfully!"
