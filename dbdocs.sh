@@ -3,13 +3,13 @@ set -e
 
 echo "Dbdocs started"
 
-FILENAME = $DBDCOS_FILENAME
+FILENAME = $DBDOCS_FILENAME
 #Generate password in order to protect the project's diagram url
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
 echo "REPOSITORY $REPOSITORY"
 echo "REPOSITORY_PATH $REPOSITORY_PATH"
-echo "DBDOCS_FILENAME $DBDCOS_FILENAME"
+echo "DBDOCS_FILENAME $DBDOCS_FILENAME"
 
 echo "Install Dbdocs"
 sudo npm install -g dbdocs 
