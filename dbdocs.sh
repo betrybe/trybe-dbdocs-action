@@ -9,8 +9,8 @@ DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 #File path through filename
 PATH=$(echo $(find $(pwd -L) -name $DBDOCS_FILENAME))
 REMOVE_PATH="/home/runner/work/$REPOSITORY/$REPOSITORY/$REPOSITORY_PATH"
-url=$(echo "${PATH/$REMOVE_PATH/""}")
-
+URL=$(echo "${PATH/$REMOVE_PATH/""}")
+PROJECT=$REPOSITORY
 echo "Install Dbdocs"
 echo "sudo npm install -g dbdocs"
 
@@ -20,7 +20,7 @@ echo "sudo npm install -g dbdocs"
 #Building dbdocs
 echo "Build Diagram"
 #echo "dbdocs build $url --password=$DBDOCS_PASSWORD"
-echo "dbdocs build ./$url --project=$REPOSITORY/$REPOSITORY_PATH"
+echo "dbdocs build ./$URL --project=$PROJECT"
 #https://dbdocs.io/username/your_project
 #echo "https://dbdocs.io/tech-ops/$REPOSITORY"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
