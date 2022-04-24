@@ -8,13 +8,14 @@ DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
 #File path through filename
 PATH=$(echo $(find $(pwd -L) -name $DBDOCS_FILENAME))
+REMOVE_PATH="/home/runner/work/"
+echo "${PATH/$REMOVE_PATH/""}"
+url=$(echo "${PATH/$REMOVE_PATH/""}")
+echo $url
 
 echo "DBDOCS_FILENAME $DBDOCS_FILENAME"
 echo "FILE PATH $PATH"
-remove="/home/runner/work/"
 
-url=$(echo "${PATH/remove/""}")
-echo $url
 echo "Install Dbdocs"
 echo "sudo npm install -g dbdocs"
 
@@ -24,7 +25,7 @@ echo "sudo npm install -g dbdocs"
 #Building dbdocs
 
 echo "Build Diagram"
-echo "dbdocs build lego-lms/docs/lego-lms-database.dbml --password=$DBDOCS_PASSWORD"
+echo "dbdocs build $url --password=$DBDOCS_PASSWORD"
 
 #https://dbdocs.io/username/your_project
 echo "https://dbdocs.io/tech-ops/$REPOSITORY"
