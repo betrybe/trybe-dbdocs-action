@@ -20,7 +20,7 @@ echo "sudo npm install -g dbdocs"
 #Building dbdocs
 echo "Build Diagram"
 #echo "dbdocs build $url --password=$DBDOCS_PASSWORD"
-echo dbdocs build "./"$url
+echo "dbdocs build ./$url --project=$REPOSITORY/$REPOSITORY_PATH"
 #https://dbdocs.io/username/your_project
 #echo "https://dbdocs.io/tech-ops/$REPOSITORY"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
