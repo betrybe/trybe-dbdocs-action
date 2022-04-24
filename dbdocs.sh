@@ -7,7 +7,7 @@ echo "Dbdocs started"
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
 #File path through filename
-#PATH=$(find $(pwd -L) -name $DBDOCS_FILENAME)
+PATH=$(find $(pwd -L) -name $DBDOCS_FILENAME)
 REMOVE_PATH="/home/runner/work/$REPOSITORY/$REPOSITORY/$REPOSITORY_PATH"
 #URL=$(echo "${PATH/$REMOVE_PATH/""}")
 
@@ -27,5 +27,5 @@ dbdocs build ./docs/lego-lms-database.dbml --project=lego-lms
 #echo "$(dbdocs build ./$URL --project=$PROJECT)"
 #https://dbdocs.io/username/your_project
 #echo "https://dbdocs.io/tech-ops/$REPOSITORY"
-#echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
+echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
 echo "Dbdocs ran successfully!"
