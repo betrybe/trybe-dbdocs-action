@@ -8,7 +8,7 @@ DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
 #File path through filename
 PATH=$(echo $(find $(pwd -L) -name $DBDOCS_FILENAME))
-REMOVE_PATH="/home/runner/work/"
+REMOVE_PATH="/home/runner/work/$REPOSITORY"
 echo "${PATH/$REMOVE_PATH/""}"
 url=$(echo "${PATH/$REMOVE_PATH/""}")
 echo $url
