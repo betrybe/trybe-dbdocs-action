@@ -7,7 +7,7 @@ echo "Dbdocs started"
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
 
 #File path through filename
-PATH="$(find $(pwd -L) -name $DBDOCS_FILENAME)"
+PATH=$(echo $(find $(pwd -L) -name $DBDOCS_FILENAME))
 REMOVE_PATH="/home/runner/work/$REPOSITORY/$REPOSITORY/$REPOSITORY_PATH"
 #URL=$(echo "${PATH/$REMOVE_PATH/""}")
 
