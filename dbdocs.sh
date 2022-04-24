@@ -9,7 +9,7 @@ echo "Dbdocs started"
 #File path through filename
 PATH=$(find $(pwd -L) -name $DBDOCS_FILENAME)
 REMOVE_PATH="/home/runner/work/$REPOSITORY/$REPOSITORY/$REPOSITORY_PATH"
-URL=$(echo "${PATH/$REMOVE_PATH/""}")
+#URL=$(echo "${PATH/$REMOVE_PATH/""}")
 
 #Set value to dbdocs project parameter 
 #PROJECT=$REPOSITORY
