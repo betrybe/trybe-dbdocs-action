@@ -13,9 +13,6 @@ echo "${PATH/$REMOVE_PATH/""}"
 url=$(echo "${PATH/$REMOVE_PATH/""}")
 echo $url
 
-echo "DBDOCS_FILENAME $DBDOCS_FILENAME"
-echo "FILE PATH $PATH"
-
 echo "Install Dbdocs"
 echo "sudo npm install -g dbdocs"
 
@@ -23,11 +20,10 @@ echo "sudo npm install -g dbdocs"
 #dbdocs
 
 #Building dbdocs
-
 echo "Build Diagram"
 #echo "dbdocs build $url --password=$DBDOCS_PASSWORD"
 echo "dbdocs build $url"
 #https://dbdocs.io/username/your_project
-echo "https://dbdocs.io/tech-ops/$REPOSITORY"
+#echo "https://dbdocs.io/tech-ops/$REPOSITORY"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
 echo "Dbdocs ran successfully!"
