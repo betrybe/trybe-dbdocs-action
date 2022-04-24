@@ -12,7 +12,7 @@ REMOVE_PATH="/home/runner/work/$REPOSITORY/"
 url=$(echo "${PATH/$REMOVE_PATH/""}")
 
 echo "Install Dbdocs"
-sudo npm install -g dbdocs
+echo "sudo npm install -g dbdocs"
 
 #echo "Check Dbdocs"
 #dbdocs
@@ -20,7 +20,7 @@ sudo npm install -g dbdocs
 #Building dbdocs
 echo "Build Diagram"
 #echo "dbdocs build $url --password=$DBDOCS_PASSWORD"
-echo "dbdocs build ./docs/lego-lms-database.dbml"
+dbdocs build ./docs/lego-lms-database.dbml
 #https://dbdocs.io/username/your_project
 #echo "https://dbdocs.io/tech-ops/$REPOSITORY"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
