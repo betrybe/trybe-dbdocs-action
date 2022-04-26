@@ -22,9 +22,7 @@ dbdocs
 
 #Building dbdocs
 echo "Build Diagram"
-dbdocs build ./docs/lego-lms-database.dbml --project=lego-lms
-#echo "dbdocs build $url --password=$DBDOCS_PASSWORD"
-#echo "$(dbdocs build ./$URL --project=$PROJECT)"
+dbdocs build ./$URL --project=$PROJECT --password=$DBDOCS_PASSWORD
 #https://dbdocs.io/username/your_project
 #echo "https://dbdocs.io/tech-ops/$REPOSITORY"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
