@@ -5,6 +5,7 @@ echo "Dbdocs started"
 
 #Generate password in order to protect the project's diagram url
 DBDOCS_PASSWORD=$(echo -n "$REPOSITORY$(date +%s)" | sha1sum | head -c 40)
+DBDOCS_URL=""
 
 #File path through filename
 FILEPATH=$(echo $(find $(pwd -L) -name $DBDOCS_FILENAME))
@@ -31,5 +32,8 @@ echo "https://dbdocs.io/tech-ops/$PROJECT"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD"
 
 dbdocs build ./$URL --project=$PROJECT --password=$DBDOCS_PASSWORD
+
+echo "DBDOCS_URL=https://dbdocs.io/tech-ops/$PROJECT" >> $GITHUB_ENV
+echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
 
 echo "Dbdocs ran successfully!"
