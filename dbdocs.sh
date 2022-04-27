@@ -22,8 +22,11 @@ dbdocs
 
 #Building dbdocs
 echo "Build Diagram"
-dbdocs build ./$URL --project=$PROJECT --password=$DBDOCS_PASSWORD
+
 #https://dbdocs.io/username/your_project
-#echo "https://dbdocs.io/tech-ops/$REPOSITORY"
+echo "https://dbdocs.io/tech-ops/$REPOSITORY"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD" >> $GITHUB_ENV
+
+dbdocs build ./$URL --project=$PROJECT --password=$DBDOCS_PASSWORD
+
 echo "Dbdocs ran successfully!"
