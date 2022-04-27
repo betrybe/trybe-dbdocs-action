@@ -24,7 +24,7 @@ dbdocs
 echo "Build Diagram"
 
 #https://dbdocs.io/username/your_project
-echo "https://dbdocs.io/tech-ops/$REPOSITORY"
+echo "https://dbdocs.io/tech-ops/$PROJECT"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD"
 
 dbdocs build ./$URL --project=$PROJECT --password=$DBDOCS_PASSWORD
