@@ -12,7 +12,7 @@ REMOVE_PATH="/home/runner/work/$REPOSITORY/$REPOSITORY/$REPOSITORY_PATH"
 URL=$(echo "${FILEPATH/$REMOVE_PATH/""}")
 
 #Set value to dbdocs project parameter 
-PROJECT=$REPOSITORY
+PROJECT=$REPOSITORY/$REPOSITORY_PATH
 
 echo "Install Dbdocs"
 sudo npm install -g dbdocs
