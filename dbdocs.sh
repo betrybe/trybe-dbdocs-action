@@ -14,9 +14,6 @@ URL=$(echo "${FILEPATH/$REMOVE_PATH/""}")
 
 #Set value to dbdocs project parameter 
 PROJECT=$REPOSITORY
-  if [[ ${REPOSITORY_PATH} != "" ]]; then
-    PROJECT=$REPOSITORY_PATH
-  fi
 
 echo "Install Dbdocs"
 sudo npm install -g dbdocs
@@ -27,11 +24,10 @@ dbdocs
 #Building dbdocs
 echo "Build Diagram"
 
-echo "RESPOSITORY=$REPOSITORY"
-echo "REPOSITORY_PATH=$REPOSITORY_PATH"
 #https://dbdocs.io/username/your_project
 echo "https://dbdocs.io/tech-ops/$PROJECT"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD"
+echo "FILEPATH=$FILEPATH"
 
 dbdocs build ./$URL --project=$PROJECT --password=$DBDOCS_PASSWORD
 
