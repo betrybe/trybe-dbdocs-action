@@ -27,7 +27,7 @@ dbdocs
 #Building dbdocs
 echo "Build Diagram"
 
-echo "RESPOSITORY_PATH=$REPOSITORY_PATH"
+echo "RESPOSITORY=$REPOSITORY"
 #https://dbdocs.io/username/your_project
 echo "https://dbdocs.io/tech-ops/$PROJECT"
 echo "DBDOCS_PASSWORD=$DBDOCS_PASSWORD"
